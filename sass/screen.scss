@@ -1,0 +1,27 @@
+body {
+	background: #00030e;
+}
+
+textarea {
+	outline: none;
+	border: none;
+	outline-color: transparent;
+  outline-style: none;
+  display: block;
+	position: absolute;
+
+	width: 70%;
+	height: 100%;
+	left: 50%;
+	margin-left: -35%;
+	padding-top: 80px;
+	padding-bottom: 80px;
+  
+	font-family: 'AtlasTypewriterLight';
+	font-size: 13pt;
+	line-height: 2em;
+	letter-spacing: 1px;
+	background: #00030e;
+	color: #cacaca;
+	
+}
