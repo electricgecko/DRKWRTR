@@ -17,11 +17,30 @@ textarea {
 	padding-top: 80px;
 	padding-bottom: 80px;
   
-	font-family: 'AtlasTypewriterLight';
+	font-family: 'AtlasTypewriterLight', monospace;
 	font-size: 13pt;
 	line-height: 2em;
 	letter-spacing: 1px;
 	background: #00030e;
-	color: #cacaca;
+	color: #cacaca;	
+}
+
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) {
+	
+	textarea {
+	
+		position: relative;
+		
+		width: 88%;
+		left: auto;
+		margin: 0 auto;
+
+		padding-top: 40px;
+		
+		font-size: 10pt;
+	}
 	
 }
