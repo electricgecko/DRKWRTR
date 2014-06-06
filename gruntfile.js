@@ -1,9 +1,9 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
   grunt.initConfig({
-  
+
     pkg: grunt.file.readJSON('package.json'),
-    
+
     concat: {
     	options: {
     	  separator: '\n',
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
     	  dest: 'j/wrt.min.js'
     	}
 		},
-		
+
     uglify: {
       options: {
         banner: '/* <%= pkg.name %> <% pkg.version %> — an @electricgecko joint */\n'
@@ -23,16 +23,16 @@ module.exports = function(grunt) {
         dest: 'j/wrt.min.js'
       }
     },
-    
-    compass: {              
-			  dist: {
-			    options: {
-			      sassDir: 'sass',
-			      cssDir: './',
-			      outputStyle: 'compressed'
-			    }
-			  }
-			},
+
+    compass: {
+		  dist: {
+		    options: {
+		      sassDir: 'sass',
+		      cssDir: './',
+		      outputStyle: 'compressed'
+		    }
+		  }
+		},
 
 		watch: {
 		  css: {
@@ -49,15 +49,56 @@ module.exports = function(grunt) {
 		      livereload: true,
 		    },
 		  },
-		}
+		},
+
+    clean: {
+      dist: {
+        files: [{
+          dot: true,
+          src: [
+          'dist/*'
+          ]
+        }]
+      }
+    },
+
+    copy: {
+      dist: {
+        files: [{
+          expand: true,
+          dot: true,
+          cwd: '../DRKWRTR/',
+          dest: 'dist/',
+          src: [
+          '*.{ico,png,txt,html}',
+          '.htaccess',
+          'images/{,*/}*.{webp,gif}',
+          'j/**/*.*',
+          'screen.css',
+          'bower_components/**/*.*'
+          ]
+        }]
+      },
+    },
+
+    'gh-pages': {
+      options: {
+        base: 'dist'
+      },
+      src: ['**']
+    }
 
   });
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-concat'); 
+  grunt.loadNpmTasks('grunt-contrib-concat');
  	grunt.loadNpmTasks('grunt-contrib-uglify');
- 	grunt.loadNpmTasks('grunt-contrib-compass'); 
- 	    
+ 	grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-gh-pages');
+
 	grunt.registerTask('default', ['concat','uglify','compass']);
+  grunt.registerTask('deploy', ['clean', 'concat','uglify','compass', 'copy', 'gh-pages']);
 
 };
