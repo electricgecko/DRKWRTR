@@ -2,7 +2,7 @@ body {
 	background: #00030e;
 }
 
-textarea {
+.wrt {
 	outline: none;
 	border: none;
 	outline-color: transparent;
@@ -30,14 +30,12 @@ textarea {
 and (min-device-width : 320px) 
 and (max-device-width : 568px) {
 	
-	textarea {
-	
+	.wrt {
 		position: relative;
 		
 		width: 88%;
 		left: auto;
 		margin: 0 auto;
-
 		padding-top: 40px;
 		
 		font-size: 10pt;
