@@ -23,8 +23,20 @@ body {
 	letter-spacing: 1px;
 	background: #00030e;
 	color: #cacaca;	
+	
+	resize: none;
 }
 
+.saved {
+	display: block;
+	position: fixed;
+	left: 20px;
+	bottom: 10px;
+	color: #fff;
+	font-family: 'Arial Black', sans-serif;
+	font-weight: bold;
+	font-size: 1.5em;
+}
 
 @media only screen 
 and (min-device-width : 320px) 
@@ -38,7 +50,7 @@ and (max-device-width : 568px) {
 		margin: 0 auto;
 		padding-top: 40px;
 		
-		font-size: 10pt;
+		font-size: 11pt;
 	}
 	
 }

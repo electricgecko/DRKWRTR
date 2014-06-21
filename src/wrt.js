@@ -33,6 +33,15 @@ $(document).ready(function() {
 			w.toggleClass('src');
   };
   
+  // toggle saved indicator
+  function togglestored(state) {
+		if (state) {
+		 $('#saved').text('●');
+	 } else {
+		 $('#saved').text('○');
+	 }
+  }
+  
   // save current Markdown source to local storage
   function store() {
   	if (w.hasClass('src')) {
@@ -41,6 +50,7 @@ $(document).ready(function() {
 	  	storetxt = txt
   	}
     localStorage.setItem('drkwrtr-text', storetxt);
+    togglestored(true);
   }
   
   // toggle between Markdown source and HTML
@@ -48,8 +58,11 @@ $(document).ready(function() {
 		if (e.keyCode == 13 && e.altKey) {
 	  	e.preventDefault();
 			render();
+	  } else {
+			togglestored(false);
 	  }
 	});
+
 	
 	// autosave when user is idle
 	w.on('idle.idleTimer', function(){
