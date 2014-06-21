@@ -1,10 +1,32 @@
 $(document).ready(function() {
 
 	var w = $('#wrt');
+	var s = $('#saved');
 	
-	// get autosave from local storage
-	w.focus().val(localStorage.getItem('drkwrtr-text'));
 	
+			
+	// focus textarea and get autosave from local storage
+	
+	/*
+		using a hacky way to determine if we're on mobile,
+		as the saved/unsaved indicator has to react to the
+		iOS keyboard.
+	*/
+	
+	if (s.css('top') != 'auto') {
+		w.val(localStorage.getItem('drkwrtr-text'));
+		
+		w.focus(function(){
+			s.fadeOut();
+		})
+
+		w.blur(function(){
+			s.fadeIn();
+		})
+	} else {
+		w.focus().val(localStorage.getItem('drkwrtr-text'));
+	}
+
 	// automatically adjust textarea size
 	w.autosize();
 	
@@ -22,7 +44,6 @@ $(document).ready(function() {
 				ugly regex hack to remove paragraphs
 				as i don't use them when writing
 				texts for my blog.
-				
 			*/
 			
 	    w.val(md.replace(/<p>|<\/p>/g,''));
@@ -36,12 +57,12 @@ $(document).ready(function() {
   // toggle saved indicator
   function togglestored(state) {
 		if (state) {
-		 $('#saved').text('●');
+		 s.text('●');
 	 } else {
-		 $('#saved').text('○');
+		 s.text('○'); 
 	 }
   }
-  
+	
   // save current Markdown source to local storage
   function store() {
   	if (w.hasClass('src')) {
@@ -62,11 +83,12 @@ $(document).ready(function() {
 			togglestored(false);
 	  }
 	});
-
 	
 	// autosave when user is idle
 	w.on('idle.idleTimer', function(){
 		store()
 	});
+	
+
 	
 });
