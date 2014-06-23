@@ -5,7 +5,7 @@ A very simple writing environment I created for myself, mostly to write entries 
 
 DRKWRTR uses **Markdown** for formatting sanity. Press **ALT+Return** to toggle your text between  Markdown source and HTML output.
 
-For now, DRKWRTR supports just a single document. It uses local storage on a per-browser basis to save and retrieve your data. It does so automatically once you stop writing.
+For now, DRKWRTR supports just a single document. It uses local storage on a per-browser basis to save and retrieve your data. It does so automatically once you stop writing. A filled dot in the bottom left corner (desktop)/upper right corner (mobile) indicates a saved document.
 
 ### Plugins & dependencies
 * **Autosize** by Jack Moore – http://www.jacklmoore.com/autosize
