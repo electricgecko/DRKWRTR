@@ -17,7 +17,7 @@ body {
 	padding-top: 80px;
 	padding-bottom: 80px;
   
-	font-family: 'AtlasTypewriterLight', 'Monaco', 'Courier', monospace;
+	font-family: 'AtlasTypewriterLight', 'Courier New', 'Monaco', 'Courier Prime', 'Courier', 'Courier New', monospace;
 	font-size: 13pt;
 	line-height: 2em;
 	letter-spacing: 1px;
@@ -30,12 +30,14 @@ body {
 .saved {
 	display: block;
 	position: fixed;
+
 	left: 20px;
 	bottom: 10px;
-	color: #fff;
+	
 	font-family: 'Arial Black', sans-serif;
 	font-weight: bold;
 	font-size: 1.5em;
+	color: #fff;
 }
 
 @media only screen 

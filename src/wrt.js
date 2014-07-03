@@ -74,12 +74,20 @@ $(document).ready(function() {
     togglestored(true);
   }
   
-  // toggle between Markdown source and HTML
+  // catch key combinations
 	w.keypress(function(e) {
+		
+		// alt+enter: switch between markdown & html rendering
 		if (e.keyCode == 13 && e.altKey) {
 	  	e.preventDefault();
 			render();
 	  } else {
+				// alt+r: clear textarea
+				if (e.keyCode == 174 && e.altKey) {
+				e.preventDefault();
+				w.val('');
+				$(window).scrollTop(0);
+			}
 			togglestored(false);
 	  }
 	});
