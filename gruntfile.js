@@ -9,14 +9,14 @@ module.exports = function (grunt) {
     	  separator: '\n',
     	},
     	dist: {
-    	  src: ['src/wrt.js', 'src/jquery.autosize.min.js', 'src/markdown.min.js', 'src/idle-timer.min.js'],
+    	  src: ['src/js/wrt.js', 'src/js/jquery.autosize.min.js', 'src/js/markdown.min.js', 'src/js/idle-timer.min.js'],
     	  dest: 'j/wrt.min.js'
     	}
 		},
 
     uglify: {
       options: {
-        banner: '/* <%= pkg.name %> <% pkg.version %> — an @electricgecko joint */\n'
+        banner: '/*\n\n<%= pkg.name %> v<%= pkg.version %> — an @electricgecko joint\nhttp://electricgecko.de\n*/\n\n'
       },
       build: {
         src: 'j/wrt.min.js',
@@ -27,7 +27,7 @@ module.exports = function (grunt) {
     compass: {
 		  dist: {
 		    options: {
-		      sassDir: 'sass',
+		      sassDir: 'src/sass',
 		      cssDir: './',
 		      outputStyle: 'compressed'
 		    }
@@ -36,14 +36,14 @@ module.exports = function (grunt) {
 
 		watch: {
 		  css: {
-		    files: 'sass/*.scss',
+		    files: 'src/sass/*.scss',
 		    tasks: ['compass'],
 		    options: {
 		      livereload: true,
 		    },
 		  },
 		  js: {
-		    files: 'src/*.js',
+		    files: 'src/js/*.js',
 		    tasks: ['concat', 'uglify'],
 		    options: {
 		      livereload: true,

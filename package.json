@@ -4,7 +4,16 @@
   "desription": "A very simple writing environment with a dark theme",
   "main": "index.html",
   "author": "Malte Müller",
+  "homepage": "http://drkwrtr.co",
   "License": "MIT",
+  "repository": {
+  	"type" : "git",
+  	"url" : "https://github.com/electricgecko/DRKWRTR.git"
+  },
+  "bugs": {
+  	"url" : "hhttps://github.com/electricgecko/DRKWRTR/issues",
+  	"email" : "desk@electricgecko.de"
+	},
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-clean": "^0.5.0",
