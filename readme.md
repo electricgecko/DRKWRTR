@@ -7,6 +7,8 @@ DRKWRTR uses **Markdown** for formatting sanity. Press **ALT+Return** to toggle 
 
 For now, DRKWRTR supports just a single document. It uses local storage on a per-browser basis to save and retrieve your data. It does so automatically once you stop writing. A filled dot in the bottom left corner (desktop)/upper right corner (mobile) indicates a saved document.
 
+An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co).
+
 ### Plugins & dependencies
 * **Autosize** by Jack Moore – http://www.jacklmoore.com/autosize
 * **Idle Timer** by Paul Irish — https://github.com/thorst/jquery-idletimer
