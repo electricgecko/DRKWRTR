@@ -3,7 +3,6 @@ $(document).ready(function() {
 	var w = $('#wrt');
 	var s = $('#saved');
 	
-	
 			
 	// focus textarea and get autosave from local storage
 	

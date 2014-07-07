@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 
     uglify: {
       options: {
-        banner: '/*\n\n<%= pkg.name %> v<%= pkg.version %> — an @electricgecko joint\nhttp://electricgecko.de\n*/\n\n'
+        banner: '/*\n\n<%= pkg.name %> v<%= pkg.version %> — an @electricgecko joint\nhttp://drkwrtr.co/about\nhttps://github.com/electricgecko/DRKWRTR\n\n*/\n\n'
       },
       build: {
         src: 'j/wrt.min.js',

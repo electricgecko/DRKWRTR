@@ -40,9 +40,31 @@ body {
 	color: #fff;
 }
 
+
+@media only screen
+and (max-width: 820px) {
+
+	.wrt {
+		font-size: 11pt;
+		line-height: 2.2em;
+	}
+
+}
+
+@media only screen
+and (max-width: 600px) {
+
+	.wrt {
+		font-size: 10pt;
+		line-height: 2.6em;
+	}
+
+}
+
+
 @media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) {
+and (min-device-width: 320px) 
+and (max-device-width: 568px) {
 	
 	.wrt {
 		position: relative;
