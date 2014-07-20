@@ -4,6 +4,8 @@ $(document).ready(function() {
 	var s = $('#saved');
 	var i = $('#txtid');
 	
+	i.hide();
+	
 			
 	// focus textarea and get autosave from local storage
 	
@@ -79,6 +81,8 @@ $(document).ready(function() {
 		$.post( "cp.php", { txt: w.val() })
 			.done(function(data) {
     		i.html('<a href="txt/'+data+'.html" target="_blank">'+data+'</a>');
+		},function(){
+			i.fadeIn(400);
 		});
   }
   
