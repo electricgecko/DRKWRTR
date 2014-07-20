@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	var w = $('#wrt');
 	var s = $('#saved');
+	var i = $('#txtid');
 	
 			
 	// focus textarea and get autosave from local storage
@@ -73,22 +74,40 @@ $(document).ready(function() {
     togglestored(true);
   }
   
+  // create permalink
+  function perm() {
+		$.post( "cp.php", { txt: w.val() })
+			.done(function(data) {
+    		i.html('<a href="txt/'+data+'.html" target="_blank">'+data+'</a>');
+		});
+  }
+  
   // catch key combinations
 	w.keypress(function(e) {
+	
+		console.log(e.keyCode);
 		
 		// alt+enter: switch between markdown & html rendering
 		if (e.keyCode == 13 && e.altKey) {
 	  	e.preventDefault();
 			render();
-	  } else {
-				// alt+r: clear textarea
-				if (e.keyCode == 174 && e.altKey) {
-				e.preventDefault();
-				w.val('');
-				$(window).scrollTop(0);
-			}
-			togglestored(false);
-	  }
+	  };
+	  
+	  if (e.keyCode == 174 && e.altKey) {
+			e.preventDefault();
+			w.val('');
+			$(window).scrollTop(0);
+		} 
+		
+		// alt+w: create permanent copy of current text
+	  if (e.keyCode == 60) {
+	  	e.preventDefault();
+	  	store();
+			perm();
+		}
+		
+		togglestored(false);
+	  
 	});
 	
 	// autosave when user is idle

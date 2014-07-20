@@ -1,0 +1,76 @@
+body {
+	background: #00030e;
+}
+
+.content {
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 80px;
+	padding-bottom: 80px;
+  
+	font-family: 'AtlasTypewriterLight', 'Menlo', 'Monaco', 'Courier', 'Courier Prime', 'Courier New', monospace;
+	font-size: 13pt;
+	line-height: 2em;
+	letter-spacing: 1px;
+	background: #00030e;
+	color: #cacaca;	
+
+}
+
+
+
+@media only screen
+and (min-width: 1450px) {
+	.content {
+		font-size: 16pt;
+	}
+
+}
+
+
+@media only screen
+and (min-width: 1900px) {
+	.content {
+		font-size: 18pt;
+	}
+
+}
+
+
+@media only screen
+and (max-width: 820px) {
+
+	.content {
+		font-size: 11pt;
+		line-height: 2.2em;
+	}
+
+}
+
+@media only screen
+and (max-width: 600px) {
+
+	.content {
+		font-size: 10pt;
+		line-height: 2.6em;
+	}
+
+}
+
+
+@media only screen 
+and (min-device-width: 320px) 
+and (max-device-width: 568px) {
+	
+	.content {
+		position: relative;
+		
+		width: 88%;
+		left: auto;
+		margin: 0 auto;
+		padding-top: 40px;
+		
+		font-size: 11pt;
+	}
+	
+}

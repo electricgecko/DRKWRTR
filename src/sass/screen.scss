@@ -1,3 +1,5 @@
+$font-color: #cacaca;
+
 body {
 	background: #00030e;
 }
@@ -22,7 +24,7 @@ body {
 	line-height: 2em;
 	letter-spacing: 1px;
 	background: #00030e;
-	color: #cacaca;	
+	color: $font-color;
 	
 	resize: none;
 }
@@ -40,6 +42,27 @@ body {
 	color: #fff;
 }
 
+.txtid {
+	display: block;
+	position: fixed;
+	left: -100px;
+	bottom: 170px;	
+	height: 1em;
+	
+	font-family: 'AtlasTypewriterLight', 'Menlo', 'Monaco', 'Courier', 'Courier Prime', 'Courier New', monospace;
+	font-size: 0.8em;
+	letter-spacing: 1px;
+	
+	-webkit-transform: rotate(-90deg);
+	
+	a {
+		color: $font-color;
+		text-decoration: none;
+		&:hover {
+			color: #fff;
+		}
+	}
+}
 
 @media only screen
 and (min-width: 1450px) {
