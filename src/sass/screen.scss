@@ -57,10 +57,11 @@ body {
 	
 	a {
 		color: $font-color;
-		opacity: .6;
+		opacity: .8;
 		text-decoration: none;
 		&:hover {
 			color: #fff;
+			opacity: 1;
 		}
 	}
 }
