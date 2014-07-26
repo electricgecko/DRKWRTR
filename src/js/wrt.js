@@ -109,7 +109,7 @@ $(document).ready(function() {
   
   // catch key combinations
 	w.keypress(function(e) {
-
+		
 		// alt+enter: switch between markdown & html rendering
 		if (e.keyCode == 13 && e.altKey) {
 	  	e.preventDefault();
