@@ -33,7 +33,7 @@ body {
 	display: block;
 	position: fixed;
 
-	left: 20px;
+	right: 20px;
 	bottom: 10px;
 	
 	font-family: 'Arial Black', sans-serif;
@@ -45,7 +45,7 @@ body {
 .txtid {
 	display: block;
 	position: fixed;
-	left: -100px;
+	right: -99px;
 	bottom: 170px;	
 	height: 1em;
 	
@@ -61,7 +61,6 @@ body {
 		text-decoration: none;
 		&:hover {
 			color: #fff;
-			opacity: 1;
 		}
 	}
 }
@@ -132,7 +131,7 @@ and (max-device-width: 568px) {
 	}
 	
 	.txtid {
-		display: none;
+
 	}
 	
 }

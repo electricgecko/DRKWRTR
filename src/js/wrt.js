@@ -4,6 +4,11 @@ $(document).ready(function() {
 	var s = $('#saved');
 	var i = $('#txtid');
 	
+	var speed = 400;
+	
+	var txtfolder = 'txt';
+	var permalink = '';
+	
 	i.hide();
 	
 			
@@ -27,6 +32,7 @@ $(document).ready(function() {
 		})
 	} else {
 		w.focus().val(localStorage.getItem('drkwrtr-text'));
+		permalink = localStorage.getItem('drkwrtr-perm');
 	}
 
 	// automatically adjust textarea size
@@ -73,43 +79,62 @@ $(document).ready(function() {
 	  	storetxt = txt
   	}
     localStorage.setItem('drkwrtr-text', storetxt);
+    localStorage.setItem('drkwrtr-perm', permalink);
     togglestored(true);
   }
   
   // create permalink
-  function perm() {
-		$.post( "cp.php", { txt: w.val() })
-			.done(function(data) {
-    		i.html('<a href="txt/'+data+'.html" target="_blank">'+data+'</a>');
-		},function(){
-			i.fadeIn(400);
-		});
+  function createPermalink() {
+			$.post( "cp.php", {txt: w.val()}).done(function(data) {
+					permalink = data;
+    			i.html('<a href="'+txtfolder+'/'+data+'.html" target="_blank">'+data+'</a>');
+			},function(){
+					i.fadeIn(speed);
+			});
+  }
+  
+  // update existing permalink
+  function updatePermalink() {
+			$.post( "cp.php", {txt: w.val(), uri: permalink}).done(function(data) {
+					console.log(permalink+'---');
+    			i.html('<a href="'+txtfolder+'/'+permalink+'.html" target="_blank">'+permalink+'</a>');
+			},function(){
+				if (!i.is(':visible')) {
+					i.fadeIn(speed);
+				} else {
+					i.fadeOut(speed*0.7).fadeIn(speed*0.7);
+				}
+			});
   }
   
   // catch key combinations
 	w.keypress(function(e) {
-	
-		console.log(e.keyCode);
-		
+
 		// alt+enter: switch between markdown & html rendering
 		if (e.keyCode == 13 && e.altKey) {
 	  	e.preventDefault();
 			render();
 	  };
-	  
+	 
+	 	// alt+r: reset document 
 	  if (e.keyCode == 174 && e.altKey) {
+	  	console.log(e.keyCode);
 			e.preventDefault();
 			w.val('');
 			$(window).scrollTop(0);
 		} 
-		
-		// alt+w: create permanent copy of current text
-	  if (e.keyCode == 60) {
+
+		// alt+w: create or update permalink for current text
+	  if (e.keyCode == 8721) {
 	  	e.preventDefault();
 	  	store();
-			perm();
+			if (permalink == '') {
+				createPermalink();
+			} else {
+				updatePermalink();
+			}
 		}
-		
+
 		togglestored(false);
 	  
 	});
@@ -118,7 +143,5 @@ $(document).ready(function() {
 	w.on('idle.idleTimer', function(){
 		store()
 	});
-	
-
 	
 });
