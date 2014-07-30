@@ -118,9 +118,10 @@ $(document).ready(function() {
 	 
 	 	// alt+r: reset document 
 	  if (e.keyCode == 174 && e.altKey) {
-	  	console.log(e.keyCode);
 			e.preventDefault();
 			w.val('');
+			localStorage.setItem('drkwrtr-perm', '');
+			permalink = '';
 			$(window).scrollTop(0);
 		} 
 

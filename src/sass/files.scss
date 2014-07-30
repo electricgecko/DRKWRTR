@@ -1,20 +1,57 @@
 body {
-	background: #00030e;
+	font-family: 'AtlasTypewriterLight', 'Menlo', 'Monaco', 'Courier', 'Courier Prime', 'Courier New', monospace;
+
+	color: #fff;	
+	background: #666;
+}
+
+a {
+	color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  padding: 3px 0;
+  &:hover {
+  	background: #fff;
+  	color: #000;
+  }
 }
 
 .content {
 	width: 70%;
-	margin: 0 auto;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	margin: 100px auto;
+	padding: 100px;
   
-	font-family: 'AtlasTypewriterLight', 'Menlo', 'Monaco', 'Courier', 'Courier Prime', 'Courier New', monospace;
 	font-size: 13pt;
 	line-height: 2em;
 	letter-spacing: 1px;
-	background: #00030e;
-	color: #cacaca;	
+	background: #000;
+}
 
+.msg {
+	height: 20px;
+	width: 70%;
+	position: fixed;
+	z-index: -1;
+	top: 20px;
+	left: 15%;
+	
+	font-size: 10pt;
+	line-height: 20px;
+	text-align: center;
+	color: #000;
+	p {
+		a {
+			color: #000;
+			border-color: #000;
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
+		span {
+			padding-right: 7%;
+		}	
+	}		
 }
 
 
