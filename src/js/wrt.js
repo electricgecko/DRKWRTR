@@ -9,8 +9,14 @@ $(document).ready(function() {
 	var txtfolder = 'txt';
 	var permalink = '';
 	
+	var mobile = false;
+	
 	i.hide();
 	
+	// check if we're on a touch-based device
+	if (s.css('top') == 'auto') {
+		mobile = true;
+	}
 			
 	// focus textarea and get autosave from local storage
 	
@@ -20,7 +26,7 @@ $(document).ready(function() {
 		iOS keyboard.
 	*/
 	
-	if (s.css('top') != 'auto') {
+	if (!mobile) {
 		w.val(localStorage.getItem('drkwrtr-text'));
 		
 		w.focus(function(){
@@ -36,11 +42,15 @@ $(document).ready(function() {
 	}
 
 	// automatically adjust textarea size
-	// now handled by MarkItUp
-	// w.autosize();
+	w.autosize();
 	
 	// setup autosave timer
 	w.idleTimer(800);
+	
+	// add render button for mobile devices
+	if (mobile) {
+		$('body').append("<div>YOOOOO</div>");
+	}
  
   
   // render HTML from Markdown source

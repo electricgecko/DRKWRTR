@@ -1,9 +1,9 @@
 DRKWRTR
 =======
 
-*A writing environment for slaves on a brutalist spaceship.*
+*Writing environment for slaves on a brutalist spaceship.*
 
-A very simple writing environment I created for myself, mostly to write entries for my blog. While I use the excellent [IA Writer](http://www.iawriter.com/mac/) for most writing tasks, I wanted something with a dark theme and just the right amount of formatting features to work with my custom and weird blog format.
+DRKWRTR is a very simple writing app I created for myself, mostly to write entries for my blog. While I use the excellent [IA Writer](http://www.iawriter.com/mac/) for most writing tasks, I wanted something with a dark theme and just the right amount of formatting features to work with my custom and weird blog format.
 
 DRKWRTR uses **Markdown** for formatting sanity. Press **ALT+e** to toggle your text between Markdown source and HTML output. Press **ALT+r** to wipe your document.
 
@@ -16,6 +16,8 @@ An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co).
 ### Plugins & dependencies
 * **MarkItUp** by Jay Salvat – https://github.com/markitup/1.x
 * **PHP Markdown** by Michel Fortin – http://michelf.com/projects/php-markdown/
+* **Autosize** by Jack Moore – http://www.jacklmoore.com/autosize
+* **Idle Timer** by Paul Irish — https://github.com/thorst/jquery-idletimer
 
 I'll happily answer any questions. Feedback is always appreciated, naturally.
 
