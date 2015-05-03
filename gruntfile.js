@@ -97,7 +97,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-	grunt.registerTask('default', ['concat','uglify','compass']);
-  grunt.registerTask('deploy', ['clean', 'concat','uglify','compass', 'copy']);
+  grunt.registerTask('default', ['concat','uglify','compass']);
+
 
 };

@@ -14,7 +14,7 @@
 mySettings = {
 	previewParserPath:	'~/miu/parsers/markdown/parser.php',
 	markupSet: [
-		{name:'Preview', call:'preview', className:"preview", key:"E"}
+		{name:'HTML', call:'preview', className:"HTML", key:"E"}
 	]
 }
 

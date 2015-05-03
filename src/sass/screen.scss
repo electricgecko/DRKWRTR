@@ -4,10 +4,6 @@ body {
 	background: #00030e;
 }
 
-.markItUpHeader, .markItUpFooter {
-	display: none;
-}
-
 .wrt {
 	outline: none;
 	border: none;
@@ -69,6 +65,32 @@ body {
 	}
 }
 
+.markItUpHeader {
+	display: none;
+	
+	.markItUpButton a {
+		display: block;
+		position: fixed;
+		top: 12px; 
+		right: 40px;
+		z-index: 10;
+		
+		width: 40px;
+		height: 40px;
+		
+		font-family: 'AtlasTypewriterLight', 'Menlo', 'Monaco', 'Courier', 'Courier Prime', 'Courier New', monospace;
+		font-size: .8em;
+		color: #fff;
+		text-align: right;
+		text-decoration: none;	
+	}
+}
+
+.markItUpFooter  {
+	display: none;
+}
+
+
 @media only screen
 and (min-width: 1450px) {
 	.wrt {
@@ -121,6 +143,7 @@ and (max-device-width: 568px) {
 		padding-top: 40px;
 		
 		font-size: 11pt;
+		line-height: 2em;
 	}
 
 	.saved {
@@ -132,6 +155,10 @@ and (max-device-width: 568px) {
 		font-family: 'Arial', sans-serif;
 		font-size: 1em;
 		font-weight: normal;
+	}
+	
+	.markItUpHeader {
+		display: block;
 	}
 	
 	.txtid {

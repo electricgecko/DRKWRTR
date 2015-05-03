@@ -14,7 +14,7 @@ $(document).ready(function() {
 	i.hide();
 	
 	// check if we're on a touch-based device
-	if (s.css('top') == 'auto') {
+	if (s.css('top') != 'auto') {
 		mobile = true;
 	}
 			
@@ -26,16 +26,9 @@ $(document).ready(function() {
 		iOS keyboard.
 	*/
 	
-	if (!mobile) {
+	if (mobile) {
 		w.val(localStorage.getItem('drkwrtr-text'));
-		
-		w.focus(function(){
-			s.fadeOut();
-		})
-
-		w.blur(function(){
-			s.fadeIn();
-		})
+				
 	} else {
 		w.focus().val(localStorage.getItem('drkwrtr-text'));
 		permalink = localStorage.getItem('drkwrtr-perm');
@@ -49,7 +42,11 @@ $(document).ready(function() {
 	
 	// add render button for mobile devices
 	if (mobile) {
-		$('body').append("<div>YOOOOO</div>");
+	//	$('body').append('<span id="render-btn" class="render-btn">HTML</span>');
+		
+	//	$('#render-btn').click(function(){
+			
+	//	})
 	}
  
   
