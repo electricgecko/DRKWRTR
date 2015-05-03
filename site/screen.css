@@ -18,7 +18,33 @@ body {
 	letter-spacing: 1px;
 }
 
-p {
+a {
+	color: #fff;
+}
+
+a:hover {
+	background: #fff;
+}
+
+ul {
+   list-style: none;
+   padding: 0;
+}
+
+ul li {
+	clear: both;
+}
+
+ul li:before {
+   content: "•";
+   font-size: 250%;
+   height: 1em;
+   display: block;
+   float: left;
+   padding-right: 5px;
+}
+
+p, ul {
 	margin-bottom: 20px;
 	width: 85%;
 	 -webkit-transform:scale(1.5,1);
@@ -33,6 +59,7 @@ h1 {
 	text-indent: -9999px;
 	width: 80px;
 	height: 580px;
+	margin: 5px 0 0 5px;
 	background: url('drkwrtr.svg') no-repeat;
 	background-size: 80px;
 }
