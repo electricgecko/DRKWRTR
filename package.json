@@ -1,7 +1,7 @@
 {
   "name": "DRKWRTR",
-  "version": "0.1.0",
-  "desription": "A very simple writing environment with a dark theme",
+  "version": "0.2.0",
+  "desription": "A writing tool for slaves in a brutalist spaceship.",
   "main": "index.html",
   "author": "Malte Müller",
   "homepage": "http://drkwrtr.co",

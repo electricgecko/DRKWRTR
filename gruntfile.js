@@ -9,7 +9,7 @@ module.exports = function (grunt) {
     	  separator: '\n',
     	},
     	dist: {
-    	  src: ['src/js/wrt.js', 'src/js/jquery.autosize.min.js', 'src/js/markdown.min.js', 'src/js/idle-timer.min.js'],
+    	  src: ['src/js/jquery.markitup.js', 'src/js/wrt.js', 'miu/sets/markdown/set.js', 'src/js/idle-timer.min.js'],
     	  dest: 'j/wrt.min.js'
     	}
 		},
@@ -90,15 +90,14 @@ module.exports = function (grunt) {
 
   });
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
- 	grunt.loadNpmTasks('grunt-contrib-uglify');
- 	grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-gh-pages');
 
 	grunt.registerTask('default', ['concat','uglify','compass']);
-  grunt.registerTask('deploy', ['clean', 'concat','uglify','compass', 'copy', 'gh-pages']);
+  grunt.registerTask('deploy', ['clean', 'concat','uglify','compass', 'copy']);
 
 };

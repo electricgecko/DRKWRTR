@@ -36,31 +36,23 @@ $(document).ready(function() {
 	}
 
 	// automatically adjust textarea size
-	w.autosize();
+	// now handled by MarkItUp
+	// w.autosize();
 	
 	// setup autosave timer
 	w.idleTimer(800);
+ 
   
   // render HTML from Markdown source
+  // rendering HTML is now handled by the MarkItUp parser
+  
+  /*
+	  
   function render() {
-				
-  	if (w.hasClass('src')) {
-	    txt = w.val();
-	    md = markdown.toHTML(txt);
-	
-			/* 
-				ugly regex hack to remove paragraphs
-				as i don't use them when writing
-				texts for my blog.
-			*/
-			
-	    w.val(md.replace(/<p>|<\/p>/g,''));
-	
-		} else {
-			w.val(txt);
-		}	
-			w.toggleClass('src');
+
   };
+  
+  */ 
   
   // toggle saved indicator
   function togglestored(state) {
@@ -86,7 +78,7 @@ $(document).ready(function() {
   // create permalink
   function createPermalink() {
 			$.post( "cp.php", {txt: w.val()}).done(function(data) {
-					permalink = data;
+				permalink = data;
     			i.html('<a href="'+txtfolder+'/'+data+'.html" target="_blank">'+data+'</a>');
 			},function(){
 					i.fadeIn(speed);
@@ -96,7 +88,7 @@ $(document).ready(function() {
   // update existing permalink
   function updatePermalink() {
 			$.post( "cp.php", {txt: w.val(), uri: permalink}).done(function(data) {
-					console.log(permalink+'---');
+				console.log("● stored: "+permalink);
     			i.html('<a href="'+txtfolder+'/'+permalink+'.html" target="_blank">'+permalink+'</a>');
 			},function(){
 				if (!i.is(':visible')) {
@@ -110,13 +102,7 @@ $(document).ready(function() {
   // catch key combinations
 	w.keypress(function(e) {
 		
-		// alt+enter: switch between markdown & html rendering
-		if (e.keyCode == 13 && e.altKey) {
-	  	e.preventDefault();
-			render();
-	  };
-	 
-	 	// alt+r: reset document 
+	 // alt+r: reset document 
 	  if (e.keyCode == 174 && e.altKey) {
 			e.preventDefault();
 			w.val('');
@@ -125,7 +111,7 @@ $(document).ready(function() {
 			$(window).scrollTop(0);
 		} 
 
-		// alt+w: create or update permalink for current text
+	// alt+w: create or update permalink for current text
 	  if (e.keyCode == 8721) {
 	  	e.preventDefault();
 	  	store();
@@ -144,5 +130,9 @@ $(document).ready(function() {
 	w.on('idle.idleTimer', function(){
 		store()
 	});
+	
+	// make the textarea a MarkItUp field
+	$('#wrt').markItUp(mySettings);
+	w.focus();
 	
 });
