@@ -91,14 +91,14 @@ aside img {
 }
 
 main {
-	width: 500px;
+	width: 600px;
 	padding: 10px 0 0 10px;
 	display: table-cell;
 	vertical-align: top;
 }
 
 main article {
-	padding: 0 40px 40px 80px;
+	padding: 0 60px 60px 100px;
 	
 }
 
