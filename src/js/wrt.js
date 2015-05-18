@@ -40,26 +40,6 @@ $(document).ready(function() {
 	// setup autosave timer
 	w.idleTimer(800);
 	
-	// add render button for mobile devices
-	if (mobile) {
-	//	$('body').append('<span id="render-btn" class="render-btn">HTML</span>');
-		
-	//	$('#render-btn').click(function(){
-			
-	//	})
-	}
- 
-  
-  // render HTML from Markdown source
-  // rendering HTML is now handled by the MarkItUp parser
-  
-  /*
-	  
-  function render() {
-
-  };
-  
-  */ 
   
   // toggle saved indicator
   function togglestored(state) {
@@ -114,6 +94,13 @@ $(document).ready(function() {
 			e.preventDefault();
 			w.val('');
 			localStorage.setItem('drkwrtr-perm', '');
+			
+			// save most recent content state as a backup
+			// implement a recovery feature making use of this
+			localStorage.setItem('drkwrtr-backup', w.val());
+			
+			// then clear it
+			localStorage.setItem('drkwrtr-text', '');
 			permalink = '';
 			$(window).scrollTop(0);
 		} 
