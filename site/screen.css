@@ -102,29 +102,68 @@ main article {
 	
 }
 
-
 @media only screen
-and (min-width: 1450px) {
+and (max-width: 900px) {
+	aside {
+		display: none;
+	}
+	
+	section {
+		display: block;
+	}
+	
+	main {
+		display: block;
+		float: left;
+		width: 700px;
+		padding: 0;
+	}
 
+	main article {
+		overflow-x: hidden;
+		padding-left: 115px;
+	}
+	
+	p, ul {
+		width: 80%;;
+	}
 
 }
 
-
 @media only screen
-and (min-width: 1900px) {
+and (max-width: 780px) {
 
-}
-
-
-@media only screen
-and (max-width: 820px) {
-
+	main {
+		width: 480px;
+	}
+	
+	main article {
+		padding-left: 90px;
+	}
+	
+	p, ul {
+		width: 90%;
+	}
+	
 }
 
 @media only screen
 and (max-width: 600px) {
 
+	h1 {
+		float: none;
+		margin: 60px auto 0;
+		height: 680px;
+	}
 
+	main {
+		float: none;
+		width: 90%;
+		margin: 0 auto;
+	}
+	
+
+	
 }
 
 
@@ -132,5 +171,16 @@ and (max-width: 600px) {
 and (min-device-width: 320px) 
 and (max-device-width: 568px) {
 
-	
+	body {
+		font-size: 12pt;
+	}
+
+	main {
+		float: none;
+		width: 100%;
+	}
+
+	main article {
+		padding-left: 70px;
+	}	
 }
