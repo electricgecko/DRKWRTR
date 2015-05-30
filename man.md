@@ -32,6 +32,8 @@ Generate and displays a static URL to the text
 Clear text and reset document
 
 
+Press (ALT+r) now to remove this manual and create an empty document.
+
 Apart from its three basic features, DRKWRTR provides three URLs for reference and problem-solving:
 
 
