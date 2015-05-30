@@ -11,47 +11,52 @@ $(document).ready(function() {
 	
 	var mobile = false;
 	
+	var firstrun = localStorage.getItem('drkwrtr-firstrun');
+	
 	i.hide();
-	
-	// check if we're on a touch-based device
-	if (s.css('top') != 'auto') {
-		mobile = true;
-	}
-			
-	// focus textarea and get autosave from local storage
-	
+
+
 	/*
+		check if we're on a touch-based device
+		
 		using a hacky way to determine if we're on mobile,
 		as the saved/unsaved indicator has to react to the
 		iOS keyboard.
 	*/
 	
-	if (mobile) {
-		w.val(localStorage.getItem('drkwrtr-text'));
-				
-	} else {
-		w.focus().val(localStorage.getItem('drkwrtr-text'));
-		permalink = localStorage.getItem('drkwrtr-perm');
+	if (s.css('top') != 'auto') {
+		mobile = true;
 	}
-
-	// automatically adjust textarea size
-	w.autosize();
 	
-	// setup autosave timer
-	w.idleTimer(800);
+			
+	// focus textarea and get autosave from local storage. if running for the first time, load manual
+	
+	if (!firstrun) {
+		
+		loadmanual();
+		localStorage.setItem('drkwrtr-firstrun','done');
+		
+	} else {
+
+
+	if (mobile) {
+
+		w.val(localStorage.getItem('drkwrtr-text'));
+			
+		} else {
+			
+			w.focus().val(localStorage.getItem('drkwrtr-text'));
+			permalink = localStorage.getItem('drkwrtr-perm');
+		}	
+			
+	}	
+	
 	
 	// if manual was requested, set text to manual
 	if (w.hasClass('manual')) {
-		localStorage.setItem('drkwrtr-backup', w.val());
-
-       $.ajax({
-            url : "man.md",
-            dataType: "text",
-            success : function (data) {
-				w.val(data);
-            }
-        });		
+		loadmanual();	
 	};
+
 
 	// if backup was requested, restore from backup
 	if (w.hasClass('backup')) {
@@ -61,7 +66,15 @@ $(document).ready(function() {
 			w.focus().val(backup);					
 		}
 	};
-  
+	
+	
+	// automatically adjust textarea size
+	w.autosize();
+	
+	// setup autosave timer
+	w.idleTimer(800);
+	
+
   // toggle saved indicator
   function togglestored(state) {
 		if (state) {
@@ -70,6 +83,7 @@ $(document).ready(function() {
 		 s.text('○'); 
 	 }
   }
+	
 	
   // save current Markdown source to local storage
   function store() {
@@ -83,6 +97,7 @@ $(document).ready(function() {
     togglestored(true);
   }
   
+  
   // create permalink
   function createPermalink() {
 			$.post( "cp.php", {txt: w.val()}).done(function(data) {
@@ -92,6 +107,7 @@ $(document).ready(function() {
 					i.fadeIn(speed);
 			});
   }
+  
   
   // update existing permalink
   function updatePermalink() {
@@ -106,6 +122,21 @@ $(document).ready(function() {
 				}
 			});
   }
+  
+  
+  // Load manual from man.md
+  function loadmanual() {
+ 	 localStorage.setItem('drkwrtr-backup', w.val());
+ 	
+ 	 $.ajax({
+ 	     url : "man.md",
+ 	     dataType: "text",
+ 	     success : function (data) {
+ 	 		w.val(data);
+ 	     }
+ 	 });	  
+  }
+	
   
   // catch key combinations
 	w.keypress(function(e) {
@@ -141,10 +172,12 @@ $(document).ready(function() {
 	  
 	});
 	
+	
 	// autosave when user is idle
 	w.on('idle.idleTimer', function(){
 		store()
 	});
+	
 	
 	// make the textarea a MarkItUp field
 	$('#wrt').markItUp(mySettings);
