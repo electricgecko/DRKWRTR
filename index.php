@@ -1,3 +1,11 @@
+<?php
+	$req = split("/", $_SERVER['REQUEST_URI']);
+	
+	// Parse URL commands
+	if ($req[1] == 'manual') {
+		$man = true;
+	}
+?>
 <!DOCTYPE html>
 <html class="page-index" dir="ltr" lang="en-EN">
 	<head>
@@ -27,7 +35,7 @@
 <body>
 	
 
-<textarea id="wrt" class="wrt src"></textarea>
+<textarea id="wrt" class="wrt src <?php if ($man) {echo "manual";}?>"></textarea>
 
 <span id="saved" class="saved">○</span>
 <span id="txtid" class="txtid"></span>

@@ -40,6 +40,18 @@ $(document).ready(function() {
 	// setup autosave timer
 	w.idleTimer(800);
 	
+	// if manual was requested, set text to manual
+	if (w.hasClass('manual')) {
+		localStorage.setItem('drkwrtr-backup', w.val());
+
+       $.ajax({
+            url : "man.md",
+            dataType: "text",
+            success : function (data) {
+				w.val(data);
+            }
+        });		
+	};
   
   // toggle saved indicator
   function togglestored(state) {
