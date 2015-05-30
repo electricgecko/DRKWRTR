@@ -2,8 +2,15 @@
 	$req = split("/", $_SERVER['REQUEST_URI']);
 	
 	// Parse URL commands
+
+	// Display manual
 	if ($req[1] == 'manual') {
 		$man = true;
+	}
+	
+	// Restore from backup
+	if ($req[1] == 'backup') {
+		$backup = true;
 	}
 ?>
 <!DOCTYPE html>
@@ -35,7 +42,7 @@
 <body>
 	
 
-<textarea id="wrt" class="wrt src <?php if ($man) {echo "manual";}?>"></textarea>
+<textarea id="wrt" class="wrt src <?php if ($man) { echo 'manual'; } if ($backup) { echo 'backup'; }?>"></textarea>
 
 <span id="saved" class="saved">○</span>
 <span id="txtid" class="txtid"></span>

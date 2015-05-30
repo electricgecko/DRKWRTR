@@ -52,6 +52,15 @@ $(document).ready(function() {
             }
         });		
 	};
+
+	// if backup was requested, restore from backup
+	if (w.hasClass('backup')) {
+		backup = localStorage.getItem('drkwrtr-backup');
+		
+		if (backup != '') {
+			w.focus().val(backup);					
+		}
+	};
   
   // toggle saved indicator
   function togglestored(state) {
@@ -104,8 +113,6 @@ $(document).ready(function() {
 	 // alt+r: reset document 
 	  if (e.keyCode == 174 && e.altKey) {
 			e.preventDefault();
-			w.val('');
-			localStorage.setItem('drkwrtr-perm', '');
 			
 			// save most recent content state as a backup
 			// implement a recovery feature making use of this
@@ -113,6 +120,8 @@ $(document).ready(function() {
 			
 			// then clear it
 			localStorage.setItem('drkwrtr-text', '');
+			w.val('');
+			localStorage.setItem('drkwrtr-perm', '');
 			permalink = '';
 			$(window).scrollTop(0);
 		} 
