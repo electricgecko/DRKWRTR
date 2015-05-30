@@ -3,4 +3,5 @@ node_modules/
 .sass-cache/
 .grunt/
 dist/
+txt/
 src/gfx/drkwrtr-icon.psd
