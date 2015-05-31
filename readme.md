@@ -9,7 +9,9 @@ DRKWRTR uses **Markdown** for formatting sanity. Press **ALT+e** to toggle your 
 
 For now, DRKWRTR supports just a single document. It uses local storage on a per-browser basis to save and retrieve your data. It does so automatically once you stop writing. A filled dot in the bottom left corner (desktop)/upper right corner (mobile) indicates a saved document.
 
-Documents can be converted into a publicly visible document with permalink URL by pressing **ALT+w**. This works for both the Markdown source and rendered HTML.
+Documents can be converted into a publicly visible document with permalink URL by pressing **ALT+w**. This works for both the Markdown source and rendered HTML. For now, this feature remains in an experimental stage, though
+
+DRKWRTR provides two special URLs to trigger advanced features: [/manual](http://drkwrtr.co/manual) resets the document to the manual shown when its run the first time. This overwrites any document content entered at this point. [/backup](http://drkwrtr.co/backup) restores the content of a document that was previously wiped by pressing **ALT+r**.
 
 An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co). Simple about page with mission statement [drkwrtr.co/about](http://drkwrtr.co/about).
 
