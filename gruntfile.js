@@ -9,7 +9,7 @@ module.exports = function (grunt) {
     	  separator: '\n',
     	},
     	dist: {
-    	  src: ['src/js/jquery.autosize.min.js', 'src/js/jquery.markitup.js', 'src/js/wrt.js', 'miu/sets/markdown/set.js', 'src/js/idle-timer.min.js'],
+    	  src: ['src/js/autosize.min.js', 'src/js/jquery.markitup.js', 'miu/sets/markdown/set.js', 'src/js/idle-timer.min.js', 'src/js/wrt.js'],
     	  dest: 'j/wrt.min.js'
     	}
 		},

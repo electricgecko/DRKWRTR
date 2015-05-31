@@ -69,7 +69,7 @@ $(document).ready(function() {
 	
 	
 	// automatically adjust textarea size
-	w.autosize();
+	autosize(w);
 	
 	// setup autosave timer
 	w.idleTimer(800);
@@ -133,7 +133,11 @@ $(document).ready(function() {
  	     dataType: "text",
  	     success : function (data) {
  	 		w.val(data);
- 	     }
+ 
+ 	 		// trigger resize of input field
+ 	 		autosize.update(w);
+ 	 
+ 	     }   
  	 });	  
   }
 	
