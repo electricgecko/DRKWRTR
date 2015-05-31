@@ -11,7 +11,7 @@ For now, DRKWRTR supports just a single document. It uses local storage on a per
 
 Documents can be converted into a publicly visible document with permalink URL by pressing **ALT+w**. This works for both the Markdown source and rendered HTML.
 
-An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co).
+An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co). Simple about page with mission statement [drkwrtr.co/about](http://drkwrtr.co/about).
 
 ### Plugins & dependencies
 * **MarkItUp** by Jay Salvat – https://github.com/markitup/1.x
