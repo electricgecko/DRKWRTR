@@ -16,7 +16,7 @@ An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co).
 ### Plugins & dependencies
 * **MarkItUp** by Jay Salvat – https://github.com/markitup/1.x
 * **PHP Markdown** by Michel Fortin – http://michelf.com/projects/php-markdown/
-* **Autosize** by Jack Moore – http://www.jacklmoore.com/autosize
+* **Autosize V2** by Jack Moore – http://www.jacklmoore.com/autosize
 * **Idle Timer** by Paul Irish — https://github.com/thorst/jquery-idletimer
 
 I'll happily answer any questions. Feedback is always appreciated, naturally.
