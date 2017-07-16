@@ -13,7 +13,7 @@ Documents can be converted into a publicly visible document with permalink URL b
 
 DRKWRTR provides two special URLs to trigger advanced features: [/manual](http://drkwrtr.co/manual) resets the document to the manual shown when its run the first time. This overwrites any document content entered at this point. [/backup](http://drkwrtr.co/backup) restores the content of a document that was previously wiped by pressing **ALT+r**.
 
-An instance of the app is publicly running at [drkwrtr.co](http://drkwrtr.co). Simple about page with mission statement [drkwrtr.co/about](http://drkwrtr.co/about).
+An instance of the app is publicly running at ~~[drkwrtr.co](http://drkwrtr.co). Simple about page with mission statement [drkwrtr.co/about](http://drkwrtr.co/about).~~
 
 ### Plugins & dependencies
 * **MarkItUp** by Jay Salvat – https://github.com/markitup/1.x
