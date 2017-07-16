@@ -53,13 +53,14 @@ $(document).ready(function() {
 	
 	
 	// if manual was requested, set text to manual
-	if (w.hasClass('manual')) {
+	if ($('body').hasClass('manual')) {
+		console.log('man');
 		loadmanual();	
 	};
 
 
 	// if backup was requested, restore from backup
-	if (w.hasClass('backup')) {
+	if ($('body').hasClass('backup')) {
 		backup = localStorage.getItem('drkwrtr-backup');
 		
 		if (backup != '') {

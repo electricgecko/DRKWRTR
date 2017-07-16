@@ -4,12 +4,12 @@
 	// Parse URL commands
 
 	// Display manual
-	if ($req[1] == 'manual') {
+	if (array_values(array_slice($req, -1))[0] == 'manual') {
 		$man = true;
 	}
 	
 	// Restore from backup
-	if ($req[1] == 'backup') {
+	if (array_values(array_slice($req, -1))[0] == 'backup') {
 		$backup = true;
 	}
 ?>
@@ -32,17 +32,17 @@
 		<link href="i/drkwrtr-start-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-
 		<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		
 		<title>DRKWRTR</title>
 		
+		<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" media="all" href="screen.css" />
 </head>
-<body>
+<body <?php if ($man) { echo 'class="manual"'; } if ($backup) { echo 'class="backup"'; }?>>
 	
 
-<textarea id="wrt" class="wrt src <?php if ($man) { echo 'manual'; } if ($backup) { echo 'backup'; }?>"></textarea>
+<textarea id="wrt" class="wrt src"></textarea>
 
 <span id="saved" class="saved">○</span>
 <span id="txtid" class="txtid"></span>
