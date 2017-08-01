@@ -3,5 +3,5 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
-RewriteRule ^manual+$ / [NC]
-RewriteRule ^backup+$ / [NC]
+RewriteRule ^manual+$ /~Malte/drkwrtr/ [NC]
+RewriteRule ^backup+$ /~Malte/drkwrtr/ [NC]

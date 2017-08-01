@@ -1,5 +1,7 @@
 <?php
-	$req = split("/", $_SERVER['REQUEST_URI']);
+	$req = explode("/", $_SERVER['REQUEST_URI']);
+	$man = false;
+	$backup = false;
 	
 	// Parse URL commands
 

@@ -2,6 +2,7 @@
 node_modules/
 .sass-cache/
 .grunt/
+.htaccess
 dist/
 txt/
 src/gfx/drkwrtr-icon.psd
